@@ -1,16 +1,59 @@
-#header {
-	margin-top: 30px;
-}
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
+html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing: antialiased; -webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;-o-font-smoothing: antialiased; 
+	.global-container { width: 100%; position: relative; max-width: 960px; margin: auto; padding: 0px 40px; }
 
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
-}
+	hr { border: none; border-top: 1px solid; }
 
-.gallery-image img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+	h1 { @include GlobalCopy(); @include Playfair(); font-size: 64px; margin-bottom: 20px; }
+	h3 { @include GlobalCopy(); font-size: 28px; margin-bottom: 20px; }
+	h4 { @include GlobalCopy(); font-size: 28px; text-transform: uppercase; @include Playfair(); margin-bottom: 20px; }
+	h5 { @include GlobalCopy(); font-size: 16px; font-weight: bold; margin-bottom: 20px; }
+	span, p { display: inline-block; @include GlobalCopy(); font-size: 16px; opacity: 0.8; }
+	ul { @include GlobalCopy(); margin-bottom: 20px;
+		li { display: inline-block; float: left; background: #EEE; padding: 4px 10px; margin-bottom: 10px; margin-right: 10px; }
+		&:after { clear: both; display: block; content: ""; }
+	}
+
+	header {
+		.intro { padding-top: 160px; padding-bottom: 40px; display: inline-block;
+			h1 { }
+
+			h3 { padding-top: 20px; line-height: 30px;
+				span { display: inline-block; vertical-align: middle; font-size: 28px;
+					&.divider { height: 30px; width: 1px; background: #000; margin-left: 10px; margin-right: 10px; }
+				}
+			}
+		}
+	}
+
+	.cvContent { max-width: 800px;
+		p { margin-bottom: 20px; }
+		.opening { }
+		.about { margin-top: 100px;
+			.whatAmI { max-width: 600px;
+				p { font-size: 20px; }
+			}
+		}
+
+		.experience { margin-top: 100px;
+			.positions {
+				.position { width: 100%; display: block;
+					.col { display: inline-block; float: left;
+						&.when { width: 20%; }
+						&.what { width: 80%;
+							.role { width: 100%; font-size: 20px; }
+							.company { width: 100%; font-weight: bold; }
+							.description { width: 80%; }
+						}
+					}
+
+					&:after { clear: both; display: block; content: ""; }
+				}
+			}
+		}
+	}
+
+	footer { margin-top: 100px; padding-top: 40px; padding-bottom: 60px; background: #EEE;
+		p { display: block; padding-right: 20px; padding-top: 20px; }
+	}
 }

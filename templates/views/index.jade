@@ -1,23 +1,55 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>admin@michaelzaporozhets.com</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+	.cvContent
+		.opening
+			p Of the approximate 7.427 billion people on this planet, not many know exactly what they want to achieve of themselves, what their heart most truly yearns for or what gives their relatively meaningless lives any kind of rational purpose or reason to exist. 
+			
+			p I’ve always been different.
+
+		.about
+			h4 About
+			.whatAmI
+				p I’m a cocktail drinking, grammar nazi, creative professional with a ‘mad scientist’ programming alter-ego.
+				p Creative Technologist for short.
+
+			h5 I specialise in
+			ul
+				li Design (UI/UX)
+				li Development
+				li Protyping/Ideation
+				li Copywriting
+				li Creative Direction
+
+			h5 I am also experienced in:
+			ul
+				li Video Prodution and Editing
+				li Music Production
+				li Digital Marketing
+
+			h5 Extracurricular (#[span.past Past]/#[span.present Present])
+			ul
+				li.past Classical Ballet (8 years)
+				li.past Choirboy at St Mary’s Cathedral Choir (8 years)
+				li.present Guitar (5 years)
+				li.past Double Bass (8 years)
+				li.past Ukrainian Dancing (13 years)
+
+		.experience 
+			h4 Experience
+			.positions
+				mixin position(position)
+					.position
+						.col.when
+							.timeSpent
+								if !position.current
+									| #{position.startDate} - #{position.endDate}
+								else
+									| #{position.startDate} - present
+						.col.what
+							span.role= position.role
+							span.company= position.company
+							p.description= position.description
+
+				each position in positions
+					+position(position)

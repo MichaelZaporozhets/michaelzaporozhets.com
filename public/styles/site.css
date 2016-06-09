@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+  html .global-container, body .global-container {
+    width: 100%;
+    position: relative;
+    max-width: 960px;
+    margin: auto;
+    padding: 0px 40px; }
+  html hr, body hr {
+    border: none;
+    border-top: 1px solid; }
+  html h1, body h1 {
+    line-height: 150%;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    font-size: 64px;
+    margin-bottom: 20px; }
+  html h3, body h3 {
+    line-height: 150%;
+    color: #000;
+    font-size: 28px;
+    margin-bottom: 20px; }
+  html h4, body h4 {
+    line-height: 150%;
+    color: #000;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px; }
+  html h5, body h5 {
+    line-height: 150%;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px; }
+  html span, html p, body span, body p {
+    display: inline-block;
+    line-height: 150%;
+    color: #000;
+    font-size: 16px;
+    opacity: 0.8; }
+  html ul, body ul {
+    line-height: 150%;
+    color: #000;
+    margin-bottom: 20px; }
+    html ul li, body ul li {
+      display: inline-block;
+      float: left;
+      background: #EEE;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      margin-right: 10px; }
+    html ul:after, body ul:after {
+      clear: both;
+      display: block;
+      content: ""; }
+  html header .intro, body header .intro {
+    padding-top: 160px;
+    padding-bottom: 40px;
+    display: inline-block; }
+    html header .intro h3, body header .intro h3 {
+      padding-top: 20px;
+      line-height: 30px; }
+      html header .intro h3 span, body header .intro h3 span {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 28px; }
+        html header .intro h3 span.divider, body header .intro h3 span.divider {
+          height: 30px;
+          width: 1px;
+          background: #000;
+          margin-left: 10px;
+          margin-right: 10px; }
+  html .cvContent, body .cvContent {
+    max-width: 800px; }
+    html .cvContent p, body .cvContent p {
+      margin-bottom: 20px; }
+    html .cvContent .about, body .cvContent .about {
+      margin-top: 100px; }
+      html .cvContent .about .whatAmI, body .cvContent .about .whatAmI {
+        max-width: 600px; }
+        html .cvContent .about .whatAmI p, body .cvContent .about .whatAmI p {
+          font-size: 20px; }
+    html .cvContent .experience, body .cvContent .experience {
+      margin-top: 100px; }
+      html .cvContent .experience .positions .position, body .cvContent .experience .positions .position {
+        width: 100%;
+        display: block; }
+        html .cvContent .experience .positions .position .col, body .cvContent .experience .positions .position .col {
+          display: inline-block;
+          float: left; }
+          html .cvContent .experience .positions .position .col.when, body .cvContent .experience .positions .position .col.when {
+            width: 20%; }
+          html .cvContent .experience .positions .position .col.what, body .cvContent .experience .positions .position .col.what {
+            width: 80%; }
+            html .cvContent .experience .positions .position .col.what .role, body .cvContent .experience .positions .position .col.what .role {
+              width: 100%;
+              font-size: 20px; }
+            html .cvContent .experience .positions .position .col.what .company, body .cvContent .experience .positions .position .col.what .company {
+              width: 100%;
+              font-weight: bold; }
+            html .cvContent .experience .positions .position .col.what .description, body .cvContent .experience .positions .position .col.what .description {
+              width: 80%; }
+        html .cvContent .experience .positions .position:after, body .cvContent .experience .positions .position:after {
+          clear: both;
+          display: block;
+          content: ""; }
+  html footer, body footer {
+    margin-top: 100px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background: #EEE; }
+    html footer p, body footer p {
+      display: block;
+      padding-right: 20px;
+      padding-top: 20px; }
