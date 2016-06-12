@@ -6,7 +6,7 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 
 	.nav { width: 140px; top: 0rem; position: fixed; border-right: 1px solid #EEE; height: 100%; margin-left: -200px;
 		> ul { margin-top: 280px;
-			> li { width: 100%; background: none; padding: 0px;
+			> li { width: 100%; background: none; padding: 0px; @include Transition(300ms);
 
 				a { text-decoration: none; color: #000; display: block; padding: 4px 10px; }
 

@@ -75,7 +75,13 @@ html, body {
       html .nav > ul > li, body .nav > ul > li {
         width: 100%;
         background: none;
-        padding: 0px; }
+        padding: 0px;
+        -webkit-transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        -moz-transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        -ie-transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        -ms-transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        -o-transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1); }
         html .nav > ul > li a, body .nav > ul > li a {
           text-decoration: none;
           color: #000;
