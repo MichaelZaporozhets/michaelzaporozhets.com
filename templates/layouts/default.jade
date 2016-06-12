@@ -75,11 +75,13 @@ html
 						li: a(href="#", data-name="cv") CV
 						li: a(href="#", data-name="cv2") Portfolio
 						li.cur: a(href="#", data-name="contact") Contact
+						li.hidden: a(href="#", data-name="pagenotfound")
 					else
 						li.cur: a(href="#", data-name="home") Home
 						li: a(href="#", data-name="cv") CV
 						li: a(href="#", data-name="cv2") Portfolio
 						li: a(href="#", data-name="contact") Contact
+						li.hidden: a(href="#", data-name="pagenotfound")
 
 		//- FOOTER
 		footer
@@ -94,6 +96,7 @@ html
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/min/hishtory-min.js')
 		script(src='/js/min/site-min.js')
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,

@@ -128,3 +128,9 @@ block content
 								textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
 							.form-actions
 								button(type='submit').btn.btn-primary Send
+
+	+page("pagenotfound")
+		.cvContent
+			.opening.animBlock
+				h4 404
+				p Looks like you're lost! #[a(href="/home") Go Back Home?]

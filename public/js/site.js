@@ -45,3 +45,26 @@ $(document).ready(function() {
 
 	$('#body').css('min-height', window.innerHeight);
 });
+
+
+
+SH.pages = {
+	home: [],
+	cv: [],
+	portfolio: [],
+	contact: [],
+	pagenotfound: []
+}
+
+SH.firstPage = true;
+SH.loadedFirst = false;
+
+var openPage = function(page, args) {
+	$('.nav ul li a[data-name="'+page+'"]').click();
+
+	SH.firstPage = false;
+	return false;
+};
+
+SH.info.root = '';
+SH.init(openPage, {});

@@ -61,6 +61,8 @@ html, body {
     max-width: 960px;
     margin: auto;
     padding: 0px 40px; }
+  html .hidden, body .hidden {
+    display: none; }
   html .nav, body .nav {
     width: 140px;
     top: 0rem;
@@ -72,12 +74,19 @@ html, body {
       margin-top: 280px; }
       html .nav > ul > li, body .nav > ul > li {
         width: 100%;
-        background: none; }
+        background: none;
+        padding: 0px; }
         html .nav > ul > li a, body .nav > ul > li a {
           text-decoration: none;
-          color: #000; }
-        html .nav > ul > li.cur, body .nav > ul > li.cur {
+          color: #000;
+          display: block;
+          padding: 4px 10px; }
+        html .nav > ul > li:hover, body .nav > ul > li:hover {
           background: #EEE; }
+        html .nav > ul > li.cur, body .nav > ul > li.cur {
+          background: #000; }
+          html .nav > ul > li.cur a, body .nav > ul > li.cur a {
+            color: #FFF; }
   html hr, body hr {
     border: none;
     border-top: 1px solid; }
@@ -186,7 +195,7 @@ html, body {
     transform: rotateY(-10deg); }
   html .animBlock, body .animBlock {
     opacity: 0;
-    transform: rotateY(-2deg);
+    transform: rotateY(-1deg);
     -webkit-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     -moz-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     -ie-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
@@ -213,7 +222,8 @@ html, body {
       margin-top: 100px; }
       html .cvContent .experience .positions .position, body .cvContent .experience .positions .position {
         width: 100%;
-        display: block; }
+        display: block;
+        margin-bottom: 20px; }
         html .cvContent .experience .positions .position .col, body .cvContent .experience .positions .position .col {
           display: inline-block;
           float: left; }
@@ -235,16 +245,18 @@ html, body {
           content: ""; }
     html .cvContent .recommendations, body .cvContent .recommendations {
       margin-top: 100px; }
-      html .cvContent .recommendations .recs .rec .name, body .cvContent .recommendations .recs .rec .name {
-        display: block;
-        font-size: 20px; }
-      html .cvContent .recommendations .recs .rec .role, body .cvContent .recommendations .recs .rec .role {
-        display: block;
-        font-weight: bold; }
-      html .cvContent .recommendations .recs .rec .said, body .cvContent .recommendations .recs .rec .said {
-        margin-top: 10px; }
-      html .cvContent .recommendations .recs .rec .when, body .cvContent .recommendations .recs .rec .when {
-        opacity: 0.6; }
+      html .cvContent .recommendations .recs .rec, body .cvContent .recommendations .recs .rec {
+        margin-bottom: 20px; }
+        html .cvContent .recommendations .recs .rec .name, body .cvContent .recommendations .recs .rec .name {
+          display: block;
+          font-size: 20px; }
+        html .cvContent .recommendations .recs .rec .role, body .cvContent .recommendations .recs .rec .role {
+          display: block;
+          font-weight: bold; }
+        html .cvContent .recommendations .recs .rec .said, body .cvContent .recommendations .recs .rec .said {
+          margin-top: 10px; }
+        html .cvContent .recommendations .recs .rec .when, body .cvContent .recommendations .recs .rec .when {
+          opacity: 0.6; }
   html footer, body footer {
     margin-top: 100px;
     padding-top: 40px;
