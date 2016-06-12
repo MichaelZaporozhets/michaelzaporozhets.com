@@ -16,13 +16,12 @@ exports = module.exports = function(app) {
 	
 	// Views
 	app.all('/', routes.views.index);
+	app.post('/contact', routes.views.index);
 
 	app.get('/portfolio/:post', routes.views.post);
 
 	//hishtory
-	app.all("/:dir", function(req, res){
+	app.get("/:dir", function(req, res){
 		res.redirect('/#!/'+req.params.dir);
 	});
-
-	app.all('/contact', routes.views.contact);
 };
