@@ -94,8 +94,33 @@ block content
 	+page("portfolio")
 		.cvContent
 			.opening.animBlock
-				p Let's pretend there's cool shit here
-				p something new
+				h4 Portfolio
+				.portfolio
+					.content
+						if data.categories.length
+							ul
+								each cat in data.categories
+									li: a(href='/portfolio/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+
+						mixin post(post)
+							.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+								h3: a(href='/portfolio/' + post.slug)= post.title
+								p!= post.content.brief.html
+								if post.content.extended
+									p.read-more: a(href='/portfolio/' + post.slug) Read more...
+
+						if filters.category && !data.category
+							h3.text-muted Invalid Category.
+						else
+							if data.posts.results.length
+								each post in data.posts.results
+									+post(post)
+							else
+								if data.category
+									h3.text-muted There are no posts in the category #{data.category.name}.
+								else
+									h3.text-muted There are no posts yet.
+
 
 
 	+page("contact")

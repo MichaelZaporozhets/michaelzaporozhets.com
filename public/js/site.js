@@ -28,8 +28,6 @@ $(document).ready(function() {
 
 	});
 
-
-
 	SH.pages = {
 		home: [],
 		cv: [],
