@@ -2,8 +2,19 @@
 html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing: antialiased; -webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;-o-font-smoothing: antialiased; 
 	.global-container { width: 100%; position: relative; max-width: 960px; margin: auto; padding: 0px 40px; }
 
-	hr { border: none; border-top: 1px solid; }
+	.nav { width: 140px; top: 0rem; position: fixed; border-right: 1px solid #EEE; height: 100%; margin-left: -200px;
+		> ul { margin-top: 280px;
+			> li { width: 100%; background: none;
 
+				a { text-decoration: none; color: #000; }
+
+				&.cur { background: #EEE; }
+			}
+		}
+	}
+
+	hr { border: none; border-top: 1px solid; }
+	a { text-decoration: none; font-weight: bold; color: inherit; }
 	h1 { @include GlobalCopy(); @include Playfair(); font-size: 64px; margin-bottom: 20px; }
 	h3 { @include GlobalCopy(); font-size: 28px; margin-bottom: 20px; }
 	h4 { @include GlobalCopy(); font-size: 28px; text-transform: uppercase; @include Playfair(); margin-bottom: 20px; }
@@ -26,6 +37,20 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 		}
 	}
 
+	#body { perspective: 800px; perspective-origin: 50% 50%; overflow: hidden; }
+
+	.page { display: none; transform-origin: left; @include Transition(600ms); perspective-origin: 50% 50%; perspective: 800px; }
+
+	.page.cur { display: block; opacity: 1; transform: rotateY(0deg); }
+	.page.transitionout { display: block; position: absolute; opacity: 0; @include Transition(0.8s); transform: rotateY(40deg);  }
+	.page.transitionin { display: block; position: absolute; opacity: 0; transform: rotateY(-10deg);  }
+
+
+	.animBlock { opacity: 0; transform: rotateY(-2deg); @include Transition(0.8s); transform-origin: left;  }
+	.page.cur {
+		.animBlock.run { opacity: 1; transform: rotateY(0deg); }
+	}
+
 	.cvContent { max-width: 800px;
 		p { margin-bottom: 20px; }
 		.opening { }
@@ -33,7 +58,13 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 			.whatAmI { max-width: 600px;
 				p { font-size: 20px; }
 			}
+
+			.extracurricular {
+				.past { opacity: 0.4; }
+			}
 		}
+
+
 
 		.experience { margin-top: 100px;
 			.positions {
@@ -48,6 +79,17 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 					}
 
 					&:after { clear: both; display: block; content: ""; }
+				}
+			}
+		}
+
+		.recommendations { margin-top: 100px;
+			.recs {
+				.rec {
+					.name { display: block;font-size: 20px; }
+					.role { display: block; font-weight: bold; }
+					.said { margin-top: 10px; }
+					.when { opacity: 0.6; }
 				}
 			}
 		}

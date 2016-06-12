@@ -37,22 +37,20 @@ html
 
 	//- HTML BODY
 	body
-
-		//- HEADER
-		header
-			.global-container
-				.intro
-					h1 Michael Zaporozhets
-					hr
-					h3 
-						span.creative Creative
-						span.divider
-						span.digital Digital
-						span.divider
-						span.obsession Obsession
-
 		//- BODY
 		#body
+			//- HEADER
+			header
+				.global-container
+					.intro
+						h1 Michael Zaporozhets
+						hr
+						h3 
+							span.creative Creative
+							span.divider
+							span.digital Digital
+							span.divider
+							span.obsession Obsession
 			.global-container
 
 				//- NOTE:
@@ -69,6 +67,19 @@ html
 				//- The content block should contain the body of your template's content
 				block content
 
+		.global-container
+			.nav
+				ul
+					if enquirySubmitted
+						li: a(href="#", data-name="home") Home
+						li: a(href="#", data-name="cv") CV
+						li: a(href="#", data-name="cv2") Portfolio
+						li.cur: a(href="#", data-name="contact") Contact
+					else
+						li.cur: a(href="#", data-name="home") Home
+						li: a(href="#", data-name="cv") CV
+						li: a(href="#", data-name="cv2") Portfolio
+						li: a(href="#", data-name="contact") Contact
 
 		//- FOOTER
 		footer
@@ -83,6 +94,7 @@ html
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/min/site-min.js')
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone

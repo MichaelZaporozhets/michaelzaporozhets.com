@@ -1,55 +1,130 @@
 extends ../layouts/default
 
 block content
-	.cvContent
-		.opening
-			p Of the approximate 7.427 billion people on this planet, not many know exactly what they want to achieve of themselves, what their heart most truly yearns for or what gives their relatively meaningless lives any kind of rational purpose or reason to exist. 
-			
-			p I’ve always been different.
 
-		.about
-			h4 About
-			.whatAmI
-				p I’m a cocktail drinking, grammar nazi, creative professional with a ‘mad scientist’ programming alter-ego.
-				p Creative Technologist for short.
+	mixin page(name)
+		if enquirySubmitted & name == 'contact'
+			.page(data-name="#{name}").cur
+				if block
+					block
+		else if !enquirySubmitted & name == 'home'
+			.page(data-name="#{name}").cur
+				if block
+					block
+		else 
+			.page(data-name="#{name}")
+				if block
+					block
 
-			h5 I specialise in
-			ul
-				li Design (UI/UX)
-				li Development
-				li Protyping/Ideation
-				li Copywriting
-				li Creative Direction
+	+page("home")
 
-			h5 I am also experienced in:
-			ul
-				li Video Prodution and Editing
-				li Music Production
-				li Digital Marketing
+	+page("cv")
+		.cvContent
+			.opening.animBlock
+				p Of the approximate 7.427 billion people on this planet, not many know exactly what they want to achieve of themselves, what their heart most truly yearns for or what gives their relatively meaningless lives any kind of rational purpose or reason to exist. 
+				
+				p I’ve always been different.
 
-			h5 Extracurricular (#[span.past Past]/#[span.present Present])
-			ul
-				li.past Classical Ballet (8 years)
-				li.past Choirboy at St Mary’s Cathedral Choir (8 years)
-				li.present Guitar (5 years)
-				li.past Double Bass (8 years)
-				li.past Ukrainian Dancing (13 years)
+			.about.animBlock
+				h4 About
+				.whatAmI
+					p I’m a cocktail drinking, grammar nazi, creative professional with a ‘mad scientist’ programming alter-ego.
+					p Creative Technologist for short.
 
-		.experience 
-			h4 Experience
-			.positions
-				mixin position(position)
-					.position
-						.col.when
-							.timeSpent
-								if !position.current
-									| #{position.startDate} - #{position.endDate}
-								else
-									| #{position.startDate} - present
-						.col.what
-							span.role= position.role
-							span.company= position.company
-							p.description= position.description
+				.specialise
+					h5 I specialise in
+					ul
+						li Design (UI/UX)
+						li Development
+						li Protyping/Ideation
+						li Copywriting
+						li Creative Direction
+				.otherexperience
+					h5 I am also experienced in:
+					ul
+						li Video Prodution and Editing
+						li Music Production
+						li Digital Marketing
+				.extracurricular
+					h5 Extracurricular ( #[span.past Past] / #[span.present Present] )
+					ul
+						li.present Writing
+						li.present Guitar (5 years)
+						li.past Classical Ballet (8 years)
+						li.past Choirboy at St Mary’s Cathedral Choir (8 years)
+						li.past Double Bass (8 years)
+						li.past Ukrainian Dancing (13 years)
 
-				each position in positions
-					+position(position)
+			.experience.animBlock
+				h4 Experience
+				.positions
+					mixin position(position)
+						.position
+							.col.when
+								.timeSpent
+									if !position.current
+										| #{position.startDate} - #{position.endDate}
+									else
+										| #{position.startDate} - present
+							.col.what
+								span.role= position.role
+								span.company= position.company
+								p.description= position.description
+
+					each position in positions
+						+position(position)
+
+			.recommendations.animBlock
+				h4 Recommendations
+				.recs
+					mixin recommendation(rec)
+						.rec
+							span.name= rec.name
+							span.role= rec.role
+							p.said “#{rec.said}”
+
+							- rec.firstName = rec.name.split(' ')[0];
+
+							.when #{rec.when}, #{rec.firstName} managed Michael at #{rec.company}
+
+					each rec in recommendations
+						+recommendation(rec)
+
+
+	+page("cv2")
+		.cvContent
+			.opening.animBlock
+				p Let's pretend there's cool shit here
+				p something new
+
+
+	+page("contact")
+		.cvContent
+			.opening.animBlock
+				h4 Contact
+				.contactForm
+					if enquirySubmitted
+						h5 Thanks for getting in touch.
+					else
+						form(method='post')
+							input(type='hidden', name='action', value='contact')
+							.form-group(class=validationErrors.name ? 'has-error' : null)
+								label Name
+								input(type='text', name='name.full', value=formData['name.full']).form-control
+							.form-group(class=validationErrors.email ? 'has-error' : null)
+								label Email
+								input(type='email', name='email', value=formData.email).form-control
+							.form-group
+								label Phone
+								input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
+							.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+								label What are you contacting us about?
+								select(name='enquiryType').form-control
+									option(value='') (select one)
+									each type in enquiryTypes
+										option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+							.form-group(class=validationErrors.message ? 'has-error' : null)
+								label Message
+								textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
+							.form-actions
+								button(type='submit').btn.btn-primary Send
