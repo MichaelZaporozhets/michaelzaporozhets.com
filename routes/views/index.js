@@ -74,16 +74,8 @@ exports = module.exports = function(req, res) {
 			endDate : '07/2013',
 			company : 'The Creative Company',
 			role : 'Front-end Web Developer',
-			desc : "At The Creative Company, I initially came on the team as a junior front-end developer- however during my last three months I fulfilled duties as a full-stack developer as well as IT Manager."
-		},
-		{
-			current: false,
-			startDate : '01/2013',
-			endDate : '07/2013',
-			company : 'The Creative Company',
-			role : 'Front-end Web Developer',
-			desc : "At The Creative Company, I initially came on the team as a junior front-end developer- however during my last three months I fulfilled duties as a full-stack developer as well as IT Manager."
-		},
+			description : "At The Creative Company, I initially came on the team as a junior front-end developer- however during my last three months I fulfilled duties as a full-stack developer as well as IT Manager."
+		}
 	]
 
 	locals.recommendations = [
@@ -114,7 +106,7 @@ exports = module.exports = function(req, res) {
 	locals.filters = {
 		category: req.params.category
 	};
-	
+
 	locals.data = {
 		posts: [],
 		categories: []
