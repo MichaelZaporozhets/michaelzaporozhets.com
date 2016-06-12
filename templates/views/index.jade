@@ -23,7 +23,7 @@ block content
 				p Of the approximate 7.427 billion people on this planet, not many know exactly what they want to achieve of themselves, what their heart most truly yearns for or what gives their relatively meaningless lives any kind of rational purpose or reason to exist. 
 				
 				p I’ve always been different.
-
+			.page-break
 			.about.animBlock
 				h4 About
 				.whatAmI
@@ -53,7 +53,7 @@ block content
 						li.past Choirboy at St Mary’s Cathedral Choir (8 years)
 						li.past Double Bass (8 years)
 						li.past Ukrainian Dancing (13 years)
-
+			.page-break
 			.experience.animBlock
 				h4 Experience
 				.positions
@@ -72,7 +72,7 @@ block content
 
 					each position in positions
 						+position(position)
-
+			.page-break
 			.recommendations.animBlock
 				h4 Recommendations
 				.recs
@@ -116,9 +116,9 @@ block content
 									+post(post)
 							else
 								if data.category
-									h3.text-muted There are no posts in the category #{data.category.name}.
+									h5.text-muted There are no posts in the category #{data.category.name}.
 								else
-									h3.text-muted There are no posts yet.
+									h5.text-muted There are no posts yet.
 
 
 

@@ -317,3 +317,97 @@ html, body {
       display: block;
       padding-right: 20px;
       padding-top: 20px; }
+
+@media all {
+  .page-break {
+    display: none; } }
+@media print {
+  @page {
+    size: auto;
+    margin: 25px;
+    margin: 25mm 25mm 25mm 25mm; }
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0px !important; }
+
+  .global-container {
+    margin: 0px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0px !important; }
+
+  .nav {
+    display: none !important; }
+
+  .page {
+    display: block !important;
+    opacity: 1 !important;
+    position: relative;
+    height: 100%; }
+    .page .content {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0px !important; }
+    .page .animBlock {
+      display: block !important;
+      opacity: 1 !important; }
+    .page .contactForm {
+      display: none !important; }
+    .page[data-name="contact"] .or {
+      display: none !important; }
+    .page[data-name="pagenotfound"] {
+      display: none !important; }
+
+  footer {
+    display: none !important; }
+
+  .page-break {
+    display: block;
+    page-break-before: always; }
+
+  hr {
+    opacity: 0.6; }
+
+  h1 {
+    font-size: 32pt !important;
+    margin-bottom: 20px; }
+
+  h3 {
+    font-size: 16pt;
+    margin-bottom: 20px; }
+
+  h4 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px; }
+
+  h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px; }
+
+  span, p {
+    display: inline-block;
+    line-height: 150%;
+    color: #000;
+    font-size: 16px;
+    opacity: 0.9; }
+
+  ul {
+    line-height: 150%;
+    color: #000;
+    margin-bottom: 20px; }
+    ul li {
+      display: inline-block;
+      float: left;
+      background: #EEE;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      margin-right: 10px; }
+    ul:after {
+      clear: both;
+      display: block;
+      content: ""; } }
