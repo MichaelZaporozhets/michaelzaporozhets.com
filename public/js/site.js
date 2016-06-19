@@ -34,7 +34,6 @@ $(document).ready(function() {
 
 	SH.pages = {
 		home: [],
-		cv: [],
 		portfolio: [],
 		contact: [],
 		pagenotfound: []
@@ -49,11 +48,10 @@ $(document).ready(function() {
 
 		var nextPage = page;
 
+		if(nextPage == '') nextPage = 'home'
+
 		$('.page.cur, .nav ul li').removeClass('cur');
 		$('.nav ul li a[data-name="'+nextPage+'"]').parent().addClass('cur');
-
-		if(currentPage == nextPage) return false;
-		if(nextPage == '') nextPage = 'home'
 
 		$('.page[data-name="'+nextPage+'"]').addClass('cur');
 		$('.page[data-name="'+currentPage+'"] .animBlock').removeClass('run');
