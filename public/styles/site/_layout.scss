@@ -103,6 +103,11 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 			}
 		}
 
+		.portolfioItem {
+			img { width: 100%;}
+		}
+
+
 		.contactOpening { margin-bottom: 0px;
 			.por { display: block;
 				a {  }
@@ -129,6 +134,8 @@ html, body { font-family: 'Source Sans Pro', sans-serif; -webkit-font-smoothing:
 			}
 		}
 	}
+
+
 
 	footer { margin-top: 100px; padding-top: 40px; padding-bottom: 60px; background: #EEE;
 		p { display: block; padding-right: 20px; padding-top: 20px; }

@@ -2,7 +2,11 @@ $(document).ready(function() {
 	$('.nav ul li a').click(function(e) {
 		e.preventDefault();
 
-		SH.open($(this).attr('data-name'))
+		if($(this).attr('data-hard') == 'false') {
+			SH.open($(this).data('name'))
+		} else {
+			window.location = $(this).data('href');
+		}
 
 
 		// $('.page[data-name="'+currentPage+'"]').addClass('transitionout');
@@ -40,16 +44,16 @@ $(document).ready(function() {
 	SH.loadedFirst = false;
 
 	var openPage = function(page, args) {
-		var currentPage = $('.page.cur').attr('data-name');
+		$('footer').hide();
+		var currentPage = $('.page.cur').data('name');
 
 		var nextPage = page;
 
-		if(currentPage == nextPage) return false;
-
-		if(nextPage == '') nextPage = 'home'
-
 		$('.page.cur, .nav ul li').removeClass('cur');
 		$('.nav ul li a[data-name="'+nextPage+'"]').parent().addClass('cur');
+
+		if(currentPage == nextPage) return false;
+		if(nextPage == '') nextPage = 'home'
 
 		$('.page[data-name="'+nextPage+'"]').addClass('cur');
 		$('.page[data-name="'+currentPage+'"] .animBlock').removeClass('run');
@@ -59,6 +63,8 @@ $(document).ready(function() {
 				$this.addClass('run');
 			}, 200*(i+1));
 		});
+
+		$('footer').show();
 
 
 		SH.firstPage = false;

@@ -58,37 +58,17 @@ html
 		//- BODY
 		#body
 			//- HEADER
-			header
-				.global-container
-					.intro
-						h1 Michael Zaporozhets
-						hr
-						h3 
-							span.creative Creative
-							span.divider
-							span.digital Digital
-							span.divider
-							span.obsession Obsession
-			.global-container
 
-				//- The content block should contain the body of your template's content
-				block content
+			//- The content block should contain the body of your template's content
+			block content
 
 		.global-container
 			.nav
 				ul
-					if enquirySubmitted
-						li: a(href="#", data-name="home") Home
-						li: a(href="#", data-name="cv") CV
-						li: a(href="#", data-name="portfolio") Portfolio
-						li: a(href="#", data-name="contact") Contact
-						li.hidden: a(href="#", data-name="pagenotfound")
-					else
-						li: a(href="#", data-name="home") Home
-						li: a(href="#", data-name="cv") CV
-						li: a(href="#", data-name="portfolio") Portfolio
-						li: a(href="#", data-name="contact") Contact
-						li.hidden: a(href="#", data-name="pagenotfound")
+
+					each link in navLinks
+						li: a(href="#", data-name="#{link.key}", data-href="#{link.href}", data-hard="#{link.hardLink}")= link.label
+					li.hidden: a(href="#", data-name="pagenotfound")
 
 		//- FOOTER
 		footer

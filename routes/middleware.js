@@ -10,11 +10,17 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Portfolio',	key: 'portfolio',		href: '/portfolio' },
-		{ label: 'Contact',		key: 'contact',		href: '/contact' }
+		{ label: 'Home',		key: 'home',		href: '/',				hardLink: false},
+		{ label: 'cv',			key: 'cv',			href: '/cv',			hardLink: false },
+		{ label: 'Portfolio',	key: 'portfolio',	href: '/portfolio',		hardLink: false },
+		{ label: 'Contact',		key: 'contact',		href: '/contact',		hardLink: false }
 	];
+
+	if(req.url.indexOf('portfolio') > -1) {
+		locals.navLinks = [
+			{ label: '< Portfolio',	key: 'portfolio',	href: '/portfolio',		hardLink: true }
+		];
+	}
 	
 	locals.user = req.user;
 	
@@ -48,12 +54,10 @@ exports.flashMessages = function(req, res, next) {
  */
 
 exports.requireUser = function(req, res, next) {
-	
 	if (!req.user) {
 		req.flash('error', 'Please sign in to access this page.');
 		res.redirect('/keystone/signin');
 	} else {
 		next();
 	}
-	
 };

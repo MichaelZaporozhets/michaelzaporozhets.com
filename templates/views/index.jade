@@ -1,22 +1,37 @@
 extends ../layouts/default
 
 block content
+	header
+		.global-container
+			.intro
+				h1 Michael Zaporozhets
+				hr
+				h3 
+					span.creative Creative
+					span.divider
+					span.digital Digital
+					span.divider
+					span.obsession Obsession
+	
 	mixin page(name)
-		if enquirySubmitted & name == 'contact'
-			.page(data-name="#{name}").cur
-				if block
-					block
-		else if !enquirySubmitted & name == 'home'
-			.page(data-name="#{name}").cur
-				if block
-					block
-		else 
-			.page(data-name="#{name}")
-				if block
-					block
+		.global-container
+			if enquirySubmitted & name == 'contact'
+				.page(data-name="#{name}").cur
+					if block
+						block
+			else if !enquirySubmitted & name == 'home'
+				.page(data-name="#{name}").cur
+					if block
+						block
+			else 
+				.page(data-name="#{name}")
+					if block
+						block
 
 	+page("home")
-
+		.content
+			.opening.animBlock
+				p test
 	+page("cv")
 		.content
 			.opening.animBlock

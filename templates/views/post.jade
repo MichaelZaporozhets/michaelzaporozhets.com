@@ -1,15 +1,12 @@
 extends ../layouts/default
 
 block content
-	article
-		p: a(href='/portfolio') &larr; back to Portfolio
-		hr
-		if !data.post
-			h2 Invalid Post.
-		else
-			header
+	header
+		.global-container
+			.intro
 				h1= data.post.title
-				h5 Posted 
+				hr
+				p Posted 
 					if data.post.publishedDate
 						| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
 					if data.post.categories && data.post.categories.length
@@ -22,5 +19,27 @@ block content
 								|  
 					if data.post.author
 						| by #{data.post.author.name.first}
-			.post
-				!= data.post.content.full.html
+	.global-container
+		.page(data-name="portfolio")
+			.content
+				.portolfioItem.animBlock
+					if !data.post
+						h2 Invalid Post.
+					else
+						.postBody
+							.purpose
+								h3 Purpose
+							.involvement
+								h3 Involvement
+							.tech
+								h3 Technologies
+								ul
+									each tech in data.post.content.technologies
+										li #{tech.name}
+							.images
+								h3 Gallery
+								ul
+									each image in data.post.images
+										li: img(src="#{image.url}")
+
+										
