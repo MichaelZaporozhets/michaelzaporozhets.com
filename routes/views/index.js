@@ -3,15 +3,23 @@ var async = require('async');
 var Enquiry = keystone.list('Enquiry');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-	
+
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
 
 	locals.positions = [
+		{
+			current: true,
+			startDate : '05/2017',
+			endDate : undefined,
+			company : 'George Patterson, Y&R (Y&R ANZ)',
+			role : 'Technical Lead',
+			description: "Technical leadership, mentorship and evangelism."
+		},
 		{
 			current: true,
 			startDate : '01/2016',
@@ -23,9 +31,9 @@ exports = module.exports = function(req, res) {
 		{
 			current: true,
 			startDate : '04/2015',
-			endDate : undefined,
-			company : 'BitStew',
-			role : 'Senior UX Developer',
+			endDate : '05/2017',
+			company : 'Bitstew/GE Digital',
+			role : 'Senior UI/UX Developer',
 			description: "Transforming and Architecting the core product from both visual and technical facets from engineers tool to beautiful platform."
 		},
 		{
@@ -98,7 +106,7 @@ exports = module.exports = function(req, res) {
 			role : 'Web Architect',
 			company: 'Edelman',
 			when : 'June 21st, 2013',
-			said: "I hired Michael with no experience, but with a raw talent beyond his years, and it paid off in droves. I cannot recommend Michael highly enough, for his commitment, passion and effort in his work, and excellent knowledge of web development, especially javascript (not just jQuery). I believe, and am confident, that he will go along way in his field of expertise, and will watch his career growth with great interest."	
+			said: "I hired Michael with no experience, but with a raw talent beyond his years, and it paid off in droves. I cannot recommend Michael highly enough, for his commitment, passion and effort in his work, and excellent knowledge of web development, especially javascript (not just jQuery). I believe, and am confident, that he will go along way in his field of expertise, and will watch his career growth with great interest."
 		}
 	]
 
@@ -111,37 +119,37 @@ exports = module.exports = function(req, res) {
 		posts: [],
 		categories: []
 	};
-	
+
 	// Load all categories
 	view.on('init', function(next) {
-		
+
 		keystone.list('PostCategory').model.find().sort('name').exec(function(err, results) {
-			
+
 			if (err || !results.length) {
 				return next(err);
 			}
-			
+
 			locals.data.categories = results;
-			
+
 			// Load the counts for each category
 			async.each(locals.data.categories, function(category, next) {
-				
+
 				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function(err, count) {
 					category.postCount = count;
 					next(err);
 				});
-				
+
 			}, function(err) {
 				next(err);
 			});
-			
+
 		});
-		
+
 	});
-	
+
 	// Load the current category filter
 	view.on('init', function(next) {
-		
+
 		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function(err, result) {
 				locals.data.category = result;
@@ -150,9 +158,9 @@ exports = module.exports = function(req, res) {
 		} else {
 			next();
 		}
-		
+
 	});
-	
+
 	// Load the posts
 	view.on('init', function(next) {
 		var q = keystone.list('Post').paginate({
@@ -165,16 +173,16 @@ exports = module.exports = function(req, res) {
 			})
 			.sort('-publishedDate')
 			.populate('author technologies categories');
-		
+
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);
 		}
-		
+
 		q.exec(function(err, results) {
 			locals.data.posts = results;
 			next(err);
 		});
-		
+
 	});
 
 	// Set locals
@@ -182,13 +190,13 @@ exports = module.exports = function(req, res) {
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.enquirySubmitted = false;
-	
+
 	// On POST requests, add the Enquiry item to the database
 	view.on('post', { action: 'contact' }, function(next) {
-		
+
 		var newEnquiry = new Enquiry.model(),
 			updater = newEnquiry.getUpdateHandler(req);
-		
+
 		updater.process(req.body, {
 			flashErrors: true,
 			fields: 'name, email, phone, enquiryType, message',
@@ -204,9 +212,9 @@ exports = module.exports = function(req, res) {
 
 			next();
 		});
-		
+
 	});
-	
+
 	// Render the view
 	view.render('index');
 };
