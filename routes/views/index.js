@@ -18,7 +18,13 @@ exports = module.exports = function(req, res) {
 			endDate : undefined,
 			company : 'George Patterson, Y&R (Y&R ANZ)',
 			role : 'Technical Lead',
-			description: "Technical leadership, mentorship and evangelism."
+			description: " \
+				As lead for both pure technical and creative technology capacities at Y&R, my responsibilities are to: \
+				Build and nurture a high-velocity development team, \
+				Lead development of all digital output, \
+				Develop best practises, workﬂows and frameworks for both local and national teams, \
+				Work alongside creative/strategy departments in an advisory and ideation capacity, \
+				Act as thought-leader and client-facing lead for all things technology"
 		},
 		{
 			current: true,
@@ -26,7 +32,7 @@ exports = module.exports = function(req, res) {
 			endDate : undefined,
 			company : 'ALAUD',
 			role : 'Creative Technologist',
-			description: "Working closely with the production team to develop highly innovative world first campaigns for Calvin Klein's #mycalvins campaign."
+			description: "At ALAUD, I act as a creative technology consultant in the video/brand production space. Helped develop key technologies for Calvin Klein's 2016 Fall Collection Launch and Desert Rave events."
 		},
 		{
 			current: true,
@@ -34,7 +40,7 @@ exports = module.exports = function(req, res) {
 			endDate : '05/2017',
 			company : 'Bitstew/GE Digital',
 			role : 'Senior UI/UX Developer',
-			description: "Transforming and Architecting the core product from both visual and technical facets from engineers tool to beautiful platform."
+			description: "I was brought on to refresh and architect a brand new user experience for Bitstew's MIX Director (Known now as Predix Studio), an Industrial IoT Visualisation and Management platform. From wireframes, through to finished designs to front end architecture, I helped lead each stage towards the eventual acquisition and integration into GE Digital's Predix software suite."
 		},
 		{
 			current: false,
@@ -42,7 +48,7 @@ exports = module.exports = function(req, res) {
 			endDate : '02/2015',
 			company : 'Snow',
 			role : 'Digital Creative Director',
-			description: "Business Development, Team Management, Consultancy, developing advertising and digital strategies, EDM, Websites & more."
+			description: "Founded and ran a 'Creative Technology As a Service' (CTAAS) Agency. Creative Direction, Technical Leadership, Design and Development of all work being output. This was a /terrible/ idea, but there's nothing like trial by fire."
 		},
 		{
 			current: false,
