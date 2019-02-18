@@ -30,18 +30,17 @@ block content
 
 	+page("home")
 		.content
-			.opening.animBlock
-				p I've been designing and building products and experiences for over a decade. 
-				
-				p From band pages on myspace to architecting UI/Experience for the worlds' foremost industrial IoT platform (now GE Predix Studio), I've seen the web change and grow from a creator's community to an experience economy (oh the irony), but some things never change:
-				
-				p I still listen to the same bands I modelled myspace pages from and I'm still passionately in love with the unbridled and often uncharted waters that technology holds for all of us.
-			.page-break
+			//- .opening.animBlock
+			//- 	p I've been designing and building products and experiences for over a decade. 
+			//- 
+			//- 	p From band pages on myspace to architecting UI/Experience for the worlds' foremost industrial IoT platform (now GE Predix Studio), I've seen the web change and grow from a creator's community to an experience economy (oh the irony), but some things never change:
+			//- 
+			//- 	p I still listen to the same bands I modelled myspace pages from and I'm still passionately in love with the unbridled and often uncharted waters that technology holds for all of us.
+			//- .page-break
 			.about.animBlock
-				h4 Skills &amp; Hobbies
-				//- .whatAmI
-				//- 	p I’m a cocktail drinking, grammar nazi, creative professional with a ‘mad scientist’ programming alter-ego.
-				//- 	p Creative Technologist for short.
+				h4 About
+				.whatAmI
+					p I am a tools-agnostic creator with over a decade of experience in designing and developing products, platforms and experiences in the digital space. 
 
 				.specialise
 					h5 I specialise in
@@ -49,23 +48,23 @@ block content
 						li Design (UI/UX)
 						li Development
 						li Protyping/Ideation
-						li Copywriting
-						li Creative Direction
+						li Product Management
+						li Commercial Management
 				.otherexperience
 					h5 I am also experienced in:
 					ul
-						li Video Prodution and Editing
-						li Music Production
-						li Digital Marketing
+						li Business Development/Tendering Process
+						li Digital Team Leadership
+						li Procurement
 				.extracurricular
 					h5 Extracurricular ( #[span.past Past] / #[span.present Present] )
 					ul
-						li.present Writing
-						li.present Guitar (5 years)
+						li.present Guitar
+						li.present Woodworking
 						li.past Classical Ballet (8 years)
-						li.past Choirboy at St Mary’s Cathedral Choir (8 years)
+						li.past Choir (8 years)
 						li.past Double Bass (8 years)
-						li.past Ukrainian Dancing (13 years)
+						
 			.page-break
 			.experience.animBlock
 				h4 Experience
@@ -75,9 +74,9 @@ block content
 							.col.when
 								.timeSpent
 									if !position.current
-										| #{position.startDate} - #{position.endDate}
+										| #{position._.startDate.format('M/Y')} - #{position._.endDate.format('M/Y')}
 									else
-										| #{position.startDate} - present
+										| #{position._.startDate.format('M/Y')} - present
 							.col.what
 								span.role= position.role
 								span.company= position.company
@@ -91,13 +90,10 @@ block content
 				.recs
 					mixin recommendation(rec)
 						.rec
-							span.name= rec.name
+							span.name= rec.name.first + ' ' + rec.name.last
 							span.role= rec.role
 							p.said “#{rec.said}”
-
-							- rec.firstName = rec.name.split(' ')[0];
-
-							.when #{rec.when}, #{rec.firstName} managed Michael at #{rec.company}
+							.when #{rec._.when.format('D/M/Y')}, #{rec.name.first} managed Michael at #{rec.company}
 
 					each rec in recommendations
 						+recommendation(rec)
