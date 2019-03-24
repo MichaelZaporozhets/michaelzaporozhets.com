@@ -13,7 +13,7 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-	
+
 	// Views
 	app.all('/', routes.views.index);
 	app.post('/contact', routes.views.index);
@@ -21,7 +21,7 @@ exports = module.exports = function(app) {
 	app.get('/portfolio/:post', routes.views.post);
 
 	//hishtory
-	app.get("/:dir", function(req, res){
+	app.get("/:dir/", function(req, res){
 		res.redirect('/#!/'+req.params.dir);
 	});
 };
