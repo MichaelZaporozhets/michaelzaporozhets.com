@@ -12,7 +12,7 @@
     "keystone": "*",
     "lodash": "^4.17.11",
     "mongodb": "^2.2.36",
-    "mongoose": "^5.4.13",
+    "mongoose": "^5.7.5",
     "node-sass": "*",
     "node-sass-middleware": "*",
     "pug": "2.0.0-beta11",
