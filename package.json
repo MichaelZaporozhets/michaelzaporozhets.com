@@ -13,7 +13,7 @@
     "lodash": "^4.17.11",
     "mongodb": "^2.2.36",
     "mongoose": "^5.4.13",
-    "node-sass": "*",
+    "node-sass": "^4.11.0",
     "node-sass-middleware": "*",
     "pug": "2.0.0-beta11",
     "underscore": "^1.9.1"
