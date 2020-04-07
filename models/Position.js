@@ -11,12 +11,12 @@ var Position = new keystone.List('Position', {
 });
 
 Position.add({
-  current: { type: Types.Boolean, required: true, initial: true },
+  current: { type: Types.Boolean, initial: true },
   startDate: { type: Types.Date, required: true, initial: true },
   endDate: { type: Types.Date, initial: true },
   company: { type: String, required: true , initial: true},
   role: { type: String, required: true, initial: true },
-  description: { type: Types.Textarea, required: true, initial: true },
+  description: { type: Types.Markdown, required: true, initial: true },
 });
 
 
