@@ -16,7 +16,8 @@ Position.add({
   endDate: { type: Types.Date, initial: true },
   company: { type: String, required: true , initial: true},
   role: { type: String, required: true, initial: true },
-  description: { type: Types.Markdown, required: true, initial: true },
+  description: { type: Types.Textarea, initial: true },
+  richDescription: { type: Types.Markdown, initial: true },
 });
 
 

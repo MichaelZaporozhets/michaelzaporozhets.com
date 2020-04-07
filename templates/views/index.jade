@@ -79,7 +79,10 @@ block content
 							.col.what
 								span.role= position.role
 								span.company= position.company
-								p.description= position.description
+								if position.richDescription
+									p.description= position.description.html
+								if position.description
+									p.description= position.description
 
 					each position in positions
 						+position(position)
