@@ -10,7 +10,7 @@
     "dotenv": "^4.0.0",
     "jade": "*",
     "keystone": "*",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mongodb": "^2.2.36",
     "mongoose": "^5.4.13",
     "node-sass": "^4.11.0",
