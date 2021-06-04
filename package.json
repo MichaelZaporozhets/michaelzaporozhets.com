@@ -6,8 +6,7 @@
     "node": ">=14.0.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "serve": "^11.3.2"
+    "parcel-bundler": "^1.12.5"
   },
   "browserslist": [
     "last 1 chrome versions"
