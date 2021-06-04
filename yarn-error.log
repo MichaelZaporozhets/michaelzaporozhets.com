@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  :/Users/michael.zaporozhets/node_modules/.bin:/Users/michael.zaporozhets/.npm-packages/bin:/Users/michael.zaporozhets/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.4
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/michael.zaporozhets/Work/PersonalRepos/michaelzaporozhets.com/package.json: Unexpected token } in JSON at position 177
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "michael-zaporozhets",
+    "version": "0.0.0",
+    "private": true,
+    "engines": {
+      "node": ">=14.0.0"
+    },
+    "devDependencies": {
+      "parcel-bundler": "^1.12.5",
+    },
+    "browserslist": [
+      "last 1 chrome versions"
+    ],
+    "scripts": {
+      "dev": "parcel src/index.html",
+      "build": "parcel build src/index.html"
+    },
+    "main": "dist/index.html"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

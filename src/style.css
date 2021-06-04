@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+:root {
+	--brand: #123232;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0rem;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background-color: #ccd6d2;
+	color: var(--brand);
+}
+
+body {
+	min-height: 100%;
+}
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	border: 20px solid var(--brand);
+	box-shadow: inset 0px 0px 0px 80px rgb(255 255 255 / 65%), inset 0px 0px 20px rgb(0 0 0 / 65%);
+}
+
+h1, h2 {
+	padding: 0rem 2rem;
+	margin: 0rem 5rem;
+}
+
+h1 {
+	font-size: 5rem;
+	position: relative;
+	overflow: hidden;
+	line-height: 1.2;
+	font-family: 'Limelight', cursive;
+	width: calc(100% - 10rem);
+}
+
+h2 {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1rem solid;
+	font-size: 2.4rem;
+	width: calc(100% - 10rem);
+}
+
+ul#contact-items {
+	list-style: none;
+	padding: 0rem;
+	margin: 0rem;
+	margin-top: 2rem;
+	display: flex;
+	width: calc(100% - 10rem);
+	padding: 0rem 2rem;
+}
+
+ul#contact-items li {
+	margin: 0.5rem;
+}
+
+ul#contact-items li a {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5rem 0.9rem;
+	background: rgba(255,255,255,0.3);
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		box-shadow: inset 0px 0px 0px 3rem rgb(255 255 255 / 65%), inset 0px 0px 20px rgb(0 0 0 / 65%);
+	}
+
+	h1, h2 {
+		margin: 0rem 3rem;
+		width: calc(100% - 6rem);
+	}
+
+	h1 {
+		font-size: 2.8rem;
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+	}
+
+	h2 {
+		border-top-width: 0.5rem;
+		font-size: 1.6rem;
+		width: calc(100% - 6rem);
+	}
+
+	ul#contact-items {
+		/* width: calc(100% - 13rem); */
+		width: calc(100% - 5rem);
+	}
+}

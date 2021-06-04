@@ -3,28 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": ">=8.4.0"
-  },
-  "dependencies": {
-    "async": "^1.5.0",
-    "dotenv": "^4.0.0",
-    "jade": "*",
-    "keystone": "*",
-    "lodash": "^4.17.11",
-    "mongodb": "^2.2.36",
-    "mongoose": "^5.4.13",
-    "node-sass": "^4.11.0",
-    "node-sass-middleware": "*",
-    "pug": "2.0.0-beta11",
-    "underscore": "^1.9.1"
+    "node": ">=14.0.0"
   },
   "devDependencies": {
-    "eslint": "3.15.0",
-    "eslint-config-keystone": "3.0.0",
-    "eslint-plugin-react": "^5.1.1"
+    "parcel-bundler": "^1.12.5"
   },
+  "browserslist": [
+    "last 1 chrome versions"
+  ],
   "scripts": {
-    "start": "node keystone.js"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
-  "main": "keystone.js"
+  "main": "dist/index.html"
 }
