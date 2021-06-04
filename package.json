@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "start": "./node_modules/parcel-bundler/bin/cli.js src/index.html"  
+    "start": "parce serve src/index.html",
+    "heroku-postbuild": "parcel build src/index.html"
   },
   "main": "dist/index.html"
 }
