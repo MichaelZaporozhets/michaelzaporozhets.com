@@ -100,7 +100,7 @@ ul#contact-items li a {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
 	h1 {
 		font-size: 2.8rem;
 	}
