@@ -26,7 +26,7 @@ main {
 	flex-direction: column;
 	height: 100%;
 	border: 20px solid var(--brand);
-	box-shadow: inset 0px 0px 0px 80px rgb(255 255 255 / 65%), inset 0px 0px 20px rgb(0 0 0 / 65%);
+	box-shadow: inset 0px 0px 0px 5rem rgb(255 255 255 / 65%), inset 0px 0px 3rem rgb(0 0 0 / 65%);
 }
 
 h1, h2 {
@@ -75,7 +75,7 @@ ul#contact-items li a {
 
 @media screen and (max-width: 768px) {
 	main {
-		box-shadow: inset 0px 0px 0px 3rem rgb(255 255 255 / 65%), inset 0px 0px 20px rgb(0 0 0 / 65%);
+		box-shadow: inset 0px 0px 0px 3rem rgb(255 255 255 / 65%), inset 0px 0px 3rem rgb(0 0 0 / 65%);
 	}
 
 	h1, h2 {
@@ -111,5 +111,28 @@ ul#contact-items li a {
 
 	ul#contact-items {
 		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	main {
+		box-shadow: inset 0px 0px 0px 2rem rgb(255 255 255 / 65%), inset 0px 0px 3rem rgb(0 0 0 / 65%);
+	}
+
+	h1, h2 {
+		width: calc(100% - 4rem);
+	}
+
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1rem;
+	}
+
+	ul#contact-items {
+		flex-direction: column;
+		width: calc(100% - 3rem);
 	}
 }
