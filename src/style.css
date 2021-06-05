@@ -114,7 +114,7 @@ ul#contact-items li a {
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
 	main {
 		box-shadow: inset 0px 0px 0px 2rem rgb(255 255 255 / 65%), inset 0px 0px 3rem rgb(0 0 0 / 65%);
 	}
