@@ -1,13 +1,23 @@
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-const m = "Michael";
-const z = "Zaporozhets";
+// const name = "Michael Zaporozhets";
 
-let cur = 1;
-let interval;
+// let cur = 0;
+// let interval;
 
-interval = setInterval(() => {
-  h1.innerText = `${m.slice(0, cur)} ${z.slice(0, cur)}`;
-  if(!z[cur]) clearInterval(interval);
-  cur++;
-}, cur * 100);
+// interval = setInterval(() => {
+//   if(name[cur]) {
+//     var nameSpan = document.createElement('span');
+//     nameSpan.innerText = name[cur];
+//     h1.appendChild(nameSpan);
+//   }
+
+//   if(!name[cur]) clearInterval(interval);
+//   cur++;
+// }, cur + 100 * 10 / 10);
+
+
+Array.from(document.querySelectorAll('h1 span')).map((node, i) => {
+  node.style.animation = `1s infinite ${i*100}ms none test`
+})
+
